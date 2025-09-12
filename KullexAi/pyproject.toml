@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "kullexai"
+version = "0.1.0"
+description = "KullexAi (kull): AI as a Unix filter with streaming and provider plugins."
+author = [{name="Dustin Lloyd}]
+requires-python = ">=3.9"
+dependencies = ["requests>=2.31"]
+
+
+[project.scripts]
+kull = "ai_cli.cli:main"
+
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
