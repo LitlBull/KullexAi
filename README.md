@@ -11,6 +11,17 @@ Features:
   - `-sol` → Suggest solutions and fixes
   - `-ser` → Deepsearch (clusters + anomalies)
   - `-scan` → Network scan analysis (nmap, masscan, etc.)
+  - `-exp` → Provide an explanation of contents.
+
+Thanks to PEP668, you will need to be in a VENV.
+
+Use: python3 -m vent/path/to/venv Then: source /path/to/venv/bin/activate
+
+run "pip install -e ." from the root folder.
+
+if your using Ollama or vLLM, you should try to already have it installed with the model of your choosing, I'm using ollama with mistral:7b pulled, before running "kull init" to enter the setup wizard.
+
+I recommend using "--stream" with your commands unless your specifying an output file. 
 
 To install, clone the repository, change into the project directory, and install with pip:
 

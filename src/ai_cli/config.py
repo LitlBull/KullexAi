@@ -37,10 +37,16 @@ def parse_toml_minimal(text: str) -> dict:
 
 def load_config() -> dict:
     cfg = DEFAULTS.copy()
+    key_env = ""  # Initialize key_env with default value
+    
     if CONFIG_PATH.exists():
         parsed = parse_toml_minimal(CONFIG_PATH.read_text(encoding="utf-8", errors="ignore"))
         cfg.update({k: parsed[k] for k in parsed if k in cfg})
         # derive key env from file if present, else from map
         key_env = parsed.get("key_env") or ENV_KEYS.get(cfg["provider"], "")
+    else:
+        # If no config file, use the mapping
+        key_env = ENV_KEYS.get(cfg["provider"], "")
+    
     cfg["key_env"] = key_env
     return cfg

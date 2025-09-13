@@ -1,14 +1,7 @@
 import sys, hashlib
-from turtle import title
-
-from pyparsing import line
-
 
 _GRAY = "\x1b[90m"
 _RESET = "\x1b[0m"
-
-
-
 
 def is_tty() -> bool:
     try:
@@ -16,16 +9,10 @@ def is_tty() -> bool:
     except Exception:
         return False
 
-
-
-
 def divider(title: str) -> str:
     if is_tty():
         return f"\n\n{_GRAY}──────────────────── {title} ────────────────────{_RESET}\n"
     return f"\n\n{title}\n" + ("-" * len(title)) + "\n"
-
-
-
 
 def tail_window(limit: int) -> bytes:
     window = bytearray()
@@ -41,16 +28,10 @@ def tail_window(limit: int) -> bytes:
             window = window[-limit:]
     return bytes(window)
 
-
-
-
 def sha256_hex(b: bytes) -> str:
     return hashlib.sha256(b).hexdigest()
 
-
-
-
-def iter_sse_lines(resp): # requests.Response(stream=True)
+def iter_sse_lines(resp):  # requests.Response(stream=True)
     buf = []
     for raw in resp.iter_lines(decode_unicode=True):
         if raw is None:
