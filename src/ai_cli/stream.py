@@ -11,7 +11,7 @@ def is_tty() -> bool:
 
 def divider(title: str) -> str:
     if is_tty():
-        return f"\n\n{_GRAY}──────────────────── {title} ────────────────────{_RESET}\n"
+        return f"\n\n{_GRAY}###############──────────────────── KullexAi ────────────────────###############{_RESET}\n"
     return f"\n\n{title}\n" + ("-" * len(title)) + "\n"
 
 def tail_window(limit: int) -> bytes:

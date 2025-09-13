@@ -139,8 +139,8 @@ def main() -> None:
         sys.exit(EXIT_AI_FAIL)
     finally:
         elapsed = int((time.time() - start) * 1000)
-        print(f"[kull] provider={args.provider} model={args.model} mode={mode} "
-            f"tokens<={args.maxtok} elapsed_ms={elapsed}", file=sys.stderr)
+        #print(f"[kull] provider={args.provider} model={args.model} mode={mode} "
+        #    f"tokens<={args.maxtok} elapsed_ms={elapsed}", file=sys.stderr)
 
 
     # Optional file output
@@ -159,6 +159,7 @@ def main() -> None:
         except Exception as e:
             if not args.quiet:
                 print(f"[kull] failed to write {args.out}: {e}", file=sys.stderr)
+    
 
 if __name__ == "__main__":
     main()
