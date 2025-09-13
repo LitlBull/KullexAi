@@ -21,7 +21,7 @@ run "pip install -e ." from the root folder.
 
 if your using Ollama or vLLM, you should try to already have it installed with the model of your choosing, I'm using ollama with mistral:7b pulled, before running "kull init" to enter the setup wizard.
 
-I recommend using "--stream" with your commands unless your specifying an output file. 
+I recommend using "--stream" with your commands unless you're specifying an output file. 
 
 To install, clone the repository, change into the project directory, and install with pip:
 
